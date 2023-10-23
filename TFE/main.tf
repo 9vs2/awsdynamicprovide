@@ -2,7 +2,7 @@
 #   source = "./main/User/KE/CDSO"
 # }
 
-data "tfe_organizations" "awsct" {}
+data "tfe_organizations" "jsguawsct" {}
 
 data "tfe_project" "default" {
   name = "awssso"
