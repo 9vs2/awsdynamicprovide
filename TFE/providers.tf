@@ -1,5 +1,5 @@
 # Provider
 
 provider "tfe" {
-  token    ="YpTBeT1Hczot9w.atlasv1.zLh03ZJeTSsHZ3FPk5y4nWlX9O93VYsHG4RwDXalyJT3dmTtGBs7GtS8dGRdrfhG9PY"
+  token    ="zm8jxfr0O0TtquQ.atlasv1.2P0DV2go6Z0M1l66FZLhuPNDiFVy4IpsBhoejyXwTfGI8qzVUMuxICt7xCZSLUA1JQ0"
 }
