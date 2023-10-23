@@ -1,5 +1,6 @@
 # Provider
-
 provider "tfe" {
-  token    ="zm8jxfr0O0TtquQ.atlasv1.2P0DV2go6Z0M1l66FZLhuPNDiFVy4IpsBhoejyXwTfGI8qzVUMuxICt7xCZSLUA1JQ0"
+  hostname = var.hostname # Optional, defaults to Terraform Cloud `app.terraform.io`
+  token    = var.token
+  version  = "~> 0.49.2"
 }
