@@ -1,6 +1,6 @@
 variable "token" {
   type = string
-  default = "cn9eVPnuVXyyww.atlasv1.yRfcZbIYLFpvyoMsiIt8BRYPVSmWCYX8Ih6nUzCDg7biMJ5CWONFN4AgeyzBKIhwzy4"
+  default = "CaDyv3gDuv3XPg.atlasv1.LnJ21aqOJmnvyUKcF1Y0OSZ7uzLTk3UyP5mpMJmKnCyzpQAzjD3LJrABSMymUxP485o"
 }
 
 variable "hostname" {
