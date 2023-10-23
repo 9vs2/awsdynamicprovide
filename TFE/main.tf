@@ -5,7 +5,7 @@
 data "tfe_organizations" "awsct" {}
 
 data "tfe_project" "default" {
-  name = "Default Project"
+  name = "awssso"
   organization = data.tfe_organizations.awsct.names[0]
 }
 
