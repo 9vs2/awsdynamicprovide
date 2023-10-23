@@ -11,7 +11,7 @@ data "tfe_project" "default" {
 
 resource "tfe_workspace" "identityCenter" {
   name         = "awsct_identityCenter"
-  organization = data.tfe_organization.awsct.names[0]
+  organization = data.tfe_organizations.awsct.names[0]
   project_id = data.tfe_project.default.id
   tag_names    = ["test", "sso"]
 }
