@@ -7,17 +7,17 @@ resource "aws_organizations_organizational_unit" "organization_unit" {
 }
 
 output "aws_organizations_organizational_unit" {
-    value = aws_organizations_organizational_unit.organization_unit.id
+    value = aws_organizations_organizational_unit.organization_unit.name
 }
 
-# data "aws_organizations_organizational_unit" "ou" {
-#   parent_id = data.aws_organizations_organization.organization.roots[0].id
-#   name      = "Core"
-# }
+data "aws_organizations_organizational_unit" "ou" {
+  parent_id = data.aws_organizations_organization.organization.roots[0].id
+  name      = output.aws_organizations_organizational_unit.value
+}
 
 resource "aws_organizations_organizational_unit" "organization_child_unit" {
   name      = "Network"
-  parent_id = output.aws_organizations_organizational_unit
+  parent_id = data.aws_organizations_organizational_unit.ou.roots[0].id
 #   data.aws_organizations_organizational_unit.output.aws_organizations_organizational_unit.value
 }
 
