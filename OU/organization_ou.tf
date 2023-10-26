@@ -7,7 +7,7 @@ resource "aws_organizations_organizational_unit" "organization_unit" {
 }
 
 output "aws_organizations_organizational_unit" {
-    value = data.aws_organizations_organizational_unit.organization_unit.id
+    value = aws_organizations_organizational_unit.organization_unit.id
 }
 
 # data "aws_organizations_organizational_unit" "ou" {
