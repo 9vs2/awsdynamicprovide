@@ -7,7 +7,6 @@ provider "tfe" {
   token    = var.token
 }
 
-
 data "tfe_organizations" "foo" {}
 
 #resource "tfe_organization" "test-organization" {
