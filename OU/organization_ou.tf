@@ -53,4 +53,4 @@ resource "aws_organizations_organizational_unit" "organization_child_unit" {
 # }
 
 
-data.aws_organizations_organization.org.roots[0].id
+# data.aws_organizations_organization.org.roots[0].id
