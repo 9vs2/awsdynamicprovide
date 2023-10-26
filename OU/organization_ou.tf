@@ -17,8 +17,15 @@ output "aws_organizations_organizational_unit" {
 
 resource "aws_organizations_organizational_unit" "organization_child_unit" {
   name      = "Network"
-  parent_id = data.aws_organizations_organizational_unit.output.aws_organizations_organizational_unit.value
+  parent_id = data.aws_organizations_organization.org.roots[0].output.aws_organizations_organizational_unit.value
+#   data.aws_organizations_organizational_unit.output.aws_organizations_organizational_unit.value
 }
+
+# resource "aws_organizations_organizational_unit" "organization_child_unit" {
+#   name      = "Network"
+#   parent_id = data.aws_organizations_organizational_unit.output.aws_organizations_organizational_unit.value
+}
+
 
 
 # # dev/vpc/outputs.tf
@@ -44,3 +51,6 @@ resource "aws_organizations_organizational_unit" "organization_child_unit" {
 # locals {
 #   vpc_id = data.terraform_remote_state.vpc.outputs.vpc_id
 # }
+
+
+data.aws_organizations_organization.org.roots[0].id
