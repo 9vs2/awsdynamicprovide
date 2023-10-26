@@ -17,7 +17,7 @@ output "aws_organizations_organizational_unit" {
 
 resource "aws_organizations_organizational_unit" "organization_child_unit" {
   name      = "Network"
-  parent_id = data.aws_organizations_organization.org.roots[0].output.aws_organizations_organizational_unit.value
+  parent_id = output.aws_organizations_organizational_unit
 #   data.aws_organizations_organizational_unit.output.aws_organizations_organizational_unit.value
 }
 
