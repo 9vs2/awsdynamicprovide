@@ -1,0 +1,15 @@
+{
+  "ConfigRuleName": "config-changes",
+  "Description": "Detect changes to Config settings within Security OU",
+  "Scope": {
+    "ComplianceResourceTypes": [
+      "AWS::Config::ConfigurationRecorder"
+    ],
+    "TagKey": "aws:ResourceTag/aws:ouid",   
+    "TagValue": "${ouid}"
+  },
+  "Source": {
+    "Owner": "AWS",
+    "SourceIdentifier": "CONFIG_CONFIGURATION_ITEM_CHANGE_NOTIFICATION" 
+  }
+}
