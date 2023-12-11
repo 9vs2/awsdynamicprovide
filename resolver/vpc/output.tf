@@ -5,7 +5,7 @@ output "vpc_attributess_id" {
 
 output "private_subnet_attributes_by_az_id" {
   description = "pools_level_2"
-  value       = module.vpc.private_subnet_attributes_by_az.id
+  value       = module.vpc.private_subnet_attributes_by_az
 }
 
 output "vpc_attributes_cidr_block" {
