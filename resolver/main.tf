@@ -15,11 +15,11 @@ module "vpc" {
 #   endpoints_resolver_rule_arn = module.route53.endpoints_resolver_rule_arn
 # }
 
-# module "route53" {
-#   source                          = "./route53"
-#   vpc_id                          = module.vpc.vpc_attributes.id
-#   private_subnet_attributes_by_az = module.vpc.private_subnet_attributes_by_az
-# }
+module "route53" {
+  source                          = "./route53"
+  vpc_id                          = module.vpc.vpc_attributes.id
+  private_subnet_attributes_by_az = module.vpc.private_subnet_attributes_by_az["endpoints/ap-northeast-2a"].id
+}
 
 module "endpoints" {
   source    = "./endpoints"
@@ -27,3 +27,5 @@ module "endpoints" {
   subnet_id = module.vpc.private_subnet_attributes_by_az_id["endpoints/ap-northeast-2a"].id
   vpc_cidr  = module.vpc.vpc_attributes_cidr_block
 }
+
+
