@@ -4,7 +4,7 @@ module "vpc" {
 
   name       = "vpc-dev-public"
   cidr_block = "10.248.0.0/16"
-  az_count   = 1
+  az_count   = 2
 
   # vpc_ipv4_ipam_pool_id   = var.vpc_ipv4_ipam_pool_id
   # vpc_ipv4_netmask_length = 20
