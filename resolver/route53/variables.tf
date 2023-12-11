@@ -6,8 +6,8 @@ variable "vpc_id" {
 
 variable "private_subnet_attributes_by_az" {
   description = "private_subnet_attributes_by_az"
-  # type        = map(any)
-  type = string
+  type        = map(any)
+  # type = string
 }
 
 variable "forwarding_rules" {
