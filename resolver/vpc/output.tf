@@ -3,7 +3,7 @@ output "vpc_attributess_id" {
   value       = module.vpc.vpc_attributes.id
 }
 
-output "private_subnet_attributes_by_az_id" {
+output "private_subnet_attributes_by_az" {
   description = "pools_level_2"
   value       = module.vpc.private_subnet_attributes_by_az
 }
