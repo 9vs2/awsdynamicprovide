@@ -18,7 +18,7 @@ resource "aws_eks_cluster" "cluster" {
   role_arn = aws_iam_role.eks_cluster.arn
 
   vpc_config {
-    subnet_ids = ["subnet-09cb7445499e16370"]
+    subnet_ids = ["subnet-07f9186700dea3285", "subnet-0a06abb2260874414"]
   }
 
   depends_on = [
@@ -31,7 +31,7 @@ resource "aws_eks_fargate_profile" "example" {
   cluster_name = aws_eks_cluster.cluster.name
   fargate_profile_name  = "my_profile"
   pod_execution_role_arn = aws_iam_role.eks_cluster.arn
-  subnet_ids             = ["subnet-09cb7445499e16370"]
+  subnet_ids             = ["subnet-07f9186700dea3285", "subnet-0a06abb2260874414"]
 
   selector {
     namespace = "app"
