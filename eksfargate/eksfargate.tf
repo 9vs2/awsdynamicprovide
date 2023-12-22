@@ -90,44 +90,60 @@ YAML
   ]
 }
 
+# Namespace
+resource "kubernetes_namespace" "app" {
+  metadata {
+    name = "app"
+  }
+}
+
+
+
 #######
 
 
-# Ingress
-resource "kubernetes_ingress" "example_ingress" {
-  wait_for_load_balancer = true
+# # Ingress
+# resource "kubernetes_ingress" "example_ingress" {
+#   wait_for_load_balancer = true
   
-  metadata {
-    name = "example-ingress"
-    namespace = kubernetes_namespace.app.metadata[0].name
-    annotations = {
-      "alb.ingress.kubernetes.io/scheme" = "internet-facing"  
-      "kubernetes.io/ingress.class" = "alb"
-    }
-  }
+#   metadata {
+#     name = "example-ingress"
+#     namespace = kubernetes_namespace.app.metadata[0].name
+#     annotations = {
+#       "alb.ingress.kubernetes.io/scheme" = "internet-facing"  
+#       "kubernetes.io/ingress.class" = "alb"
+#     }
+#   }
 
-  spec {
-    rule {
-      http {
-        path {
-          path = "/frontend"
-          backend {
-            service_name = kubernetes_service.frontend.metadata[0].name
-            service_port = 80
-          }
-        }
+#   spec {
+#     rule {
+#       http {
+#         path {
+#           path = "/frontend"
+#           backend {
+#             service_name = kubernetes_service.frontend.metadata[0].name
+#             service_port = 80
+#           }
+#         }
         
-        path {
-          path = "/backend"
-          backend {
-            service_name = kubernetes_service.backend.metadata[0].name
-            service_port = 3000  
-          }
-        }        
-      }
-    }
-  }
-}
+#         path {
+#           path = "/backend"
+#           backend {
+#             service_name = kubernetes_service.backend.metadata[0].name
+#             service_port = 3000  
+#           }
+#         }        
+#       }
+#     }
+#   }
+# }
+
+
+
+
+
+
+
 
 # #####
 # resource "kubernetes_ingress" "example" {
@@ -179,13 +195,6 @@ resource "kubernetes_ingress" "example_ingress" {
 #   }
 # }
 
-
-# Namespace
-resource "kubernetes_namespace" "app" {
-  metadata {
-    name = "app"
-  }
-}
 
 # # Frontend Deployment
 # resource "kubernetes_deployment" "frontend" {
